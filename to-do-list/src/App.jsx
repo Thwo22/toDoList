@@ -1,10 +1,15 @@
 function App(){
-    
-    const nome = "thiago"
 
+    function inputChange(event) {
+        console.log(event.target.value)
+
+    }
     return (
         <div>
-            <p>olá, {nome}</p>
+            <input placeholder="Digite a sua tarefa" onChange={inputChange}/>
+            <button>Adicionar Tarefa</button>
+
+
         </div>
     )
 }
