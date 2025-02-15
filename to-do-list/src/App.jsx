@@ -1,15 +1,34 @@
+import { useState } from "react";
+
+useState
+
 function App(){
 
-    function inputChange(event) {
-        console.log(event.target.value)
+    const [tarefas, setTarefas] = useState(["insira sua tarefa"])
+    let tarefa 
 
+    function inputChange(event) {
+        
+        tarefa = event.target.value
+        console.log(tarefa);
+
+    }
+
+    function clicou() {
+        setTarefas([`nova tarefa`])
     }
     return (
         <div>
             <input placeholder="Digite a sua tarefa" onChange={inputChange}/>
-            <button>Adicionar Tarefa</button>
+            <button onClick={clicou}>Adicionar Tarefa</button>
 
-
+            <ul>
+                {
+                    tarefas.map(item => (
+                        <li>{item}</li>
+                    ))
+                }
+            </ul>
         </div>
     )
 }
